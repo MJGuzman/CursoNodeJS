@@ -46,10 +46,11 @@ let getSalario = (empleado, callback) => {
     }
 }
 
-getEmpleadoById(4, (err, empleado) => {
+getEmpleadoById(2, (err, empleado) => {
 
     if (err)
         return console.log(err);
+
 
     getSalario(empleado, (err, salario) => {
 
