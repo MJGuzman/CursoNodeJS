@@ -1,6 +1,7 @@
 // importations
 require("../config/appsettings");
 const express = require("express");
+const mongoose = require("../database/connection");
 const { router } = require("../routes/route");
 const bodyParser = require("body-parser");
 
@@ -15,6 +16,9 @@ app.use(bodyParser.json());
 
 // routes
 app.use("/", router);
+
+// connecting Db
+mongoose.connectDB();
 
 // starting server
 app.listen(process.env.PORT, () => {
