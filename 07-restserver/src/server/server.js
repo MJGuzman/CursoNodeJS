@@ -2,7 +2,6 @@
 require("../config/appsettings");
 const express = require("express");
 const mongoose = require("../database/connection");
-const { router } = require("../routes/route");
 const bodyParser = require("body-parser");
 
 // initializations
@@ -15,7 +14,7 @@ app.use(bodyParser.json());
 // settings
 
 // routes
-app.use("/", router);
+app.use(require("../routes/route"));
 
 // connecting Db
 mongoose.connectDB();
