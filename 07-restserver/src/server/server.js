@@ -1,6 +1,7 @@
 // importations
 require("../config/appsettings");
 const express = require("express");
+const path = require("path");
 const mongoose = require("../database/connection");
 const bodyParser = require("body-parser");
 
@@ -10,7 +11,7 @@ const app = express();
 //middleware
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-
+app.use(express.static(path.join(__dirname, "../public")));
 // settings
 
 // routes
